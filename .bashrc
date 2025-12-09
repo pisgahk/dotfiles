@@ -114,16 +114,18 @@ if ! shopt -oq posix; then
 fi
 . "$HOME/.cargo/env"
 
-#My aliases
+#==================[My aliases]====================================================================================================
+
 alias ls='ls -la --color=auto'
 alias venv-banana='python3 -m venv .venv'
 alias activate='source ./.venv/bin/activate'
 
-# adding this to make my terminal have a beautiful "shell prompt style."
-# Custom prompt with brackets and lines
-#PS1='\[\033[0;36m\]┌──(\[\033[0;34m\]\u\[\033[0;36m\]@\[\033[0;34m\]\h\[\033[0;36m\])-[\[\033[0;37m\]\w\[\033[0;36m\]]\n└─\[\033[0;34m\]$\[\033[0m\] '
-
-# Enhanced Bash prompt with Git support
+alias home='cd ~'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias bashrc='source ~/.bashrc'
 
 # Git prompt function
 parse_git_branch() {
@@ -170,9 +172,7 @@ parse_git_status() {
 }
 
 # Enhanced prompt with Git info
-PS1='\[\033[0;36m\]┌──(\[\033[0;34m\]\u\[\033[0;36m\]@\[\033[0;34m\]\h\[\033[0;36m\])-[\[\033[0;37m\]\w\[\033[0;36m\]]\[\033[0;33m\]$(parse_git_branch)\[\033[0;31m\]$(parse_git_status)\[\033[0m\]\n\[\033[0;36m\]└─\[\033[0;34m\]$\[\033[0m\] '
-
-#PS1='\[\033[0;36m\]┌──(\[\033[0;31m\]\u\[\033[0;36m\]@\[\033[0;31m\]\h\[\033[0;36m\])-[\[\033[0;37m\]\w\[\033[0;36m\]]\[\033[0;33m\]$(parse_git_branch)\[\033[0;31m\]$(parse_git_status)\[\033[0m\]\n\[\033[0;36m\]└─\[\033[0;31m\]$\[\033[0m\] '
+PS1='\[\033[0;36m\]┌──(\[\033[0;34m\]\u\[\033[0;36m\]@\[\033[0;34m\]\h\[\033[0;36m\])::[\[\033[0;37m\]\w\[\033[0;36m\]]\[\033[0;33m\]$(parse_git_branch)\[\033[0;31m\]$(parse_git_status)\[\033[0m\]\n\[\033[0;36m\]└─\[\033[0;34m\]●\[\033[0m\] '
 
 PROMPT_COMMAND='echo'
 
